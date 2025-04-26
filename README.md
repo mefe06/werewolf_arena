@@ -5,7 +5,11 @@ This repository provides code for [Werewolf Arena](https://arxiv.org/abs/2407.13
 
 ### Create a Python Virtual Environment
 conda create -n $env-name python=3.12
+
+### 
 conda activate $env-name
+
+###
 pip install -r requirements.txt
 
 ### Set OpenAI API Key for using GPTs. create .env file, add following to it.
