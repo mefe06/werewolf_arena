@@ -20,7 +20,9 @@ import google
 import vertexai
 from vertexai.preview import generative_models
 from anthropic import AnthropicVertex
-
+from dotenv import load_dotenv
+load_dotenv()
+openai_api_key = os.getenv('OPENAI_API')
 
 def generate(model, **kwargs):
     if "gpt" in model:
@@ -33,9 +35,9 @@ def generate(model, **kwargs):
 
 # openai
 def generate_openai(model: str, prompt: str, json_mode: bool = True, **kwargs):
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    client = OpenAI(api_key=openai_api_key)
 
-    response_format = {"type": "text"}
+    response_format =  {"type": "text"}
     if json_mode:
         response_format = {"type": "json_object"}
     response = client.chat.completions.create(
