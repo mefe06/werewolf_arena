@@ -4,26 +4,15 @@ This repository provides code for [Werewolf Arena](https://arxiv.org/abs/2407.13
 ## Set up the environment
 
 ### Create a Python Virtual Environment
-You only need to do this once.
-```
-python3 -m venv ./venv
-```
-
-### Activate the Virtual Environment
-```
-source ./venv/bin/activate
-```
-
-### Install Dependencies
-```
+conda create -n $env-name python=3.12
+conda activate $env-name
 pip install -r requirements.txt
-```
 
-### Set OpenAI API Key for using GPTs
-```
-export OPENAI_API_KEY=<your api key>
-```
-The program will read from this environment variable.
+### Set OpenAI API Key for using GPTs. create .env file, add following to it.
+
+OPENAI_API_KEY=<your api key>
+
+### The program will read from this environment variable.
 
 ### Set up GCP for using Gemini
  - [Install the gcloud cli](https://cloud.google.com/sdk/docs/install)
@@ -35,7 +24,7 @@ The program will read from this environment variable.
 
 ## Run a single game
 
-`python3 main.py --run --v_models=pro1.5 --w_models=gpt4`
+`python3 main.py --run --v_models=gpt-4.1-nano --w_models=gpt-4.1-nano`
 
 
 ## Run games between all model combinations
